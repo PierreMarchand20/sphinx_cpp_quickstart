@@ -1,1 +1,0 @@
-# sphinx_cpp_kickstart
