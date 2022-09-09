@@ -18,4 +18,4 @@
    :numbered: 4
 
    introduction/index
-   compilation/index
+   first_cpp_program/index
