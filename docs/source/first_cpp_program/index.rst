@@ -1,6 +1,6 @@
 
-First C++ program
-#################
+First C++ programs
+##################
 
 
 .. toctree::

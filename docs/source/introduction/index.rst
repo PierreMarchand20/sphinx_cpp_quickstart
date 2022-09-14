@@ -6,4 +6,5 @@ Introduction
     :maxdepth: 2
 
     what
+    requirements
     changelog_link
