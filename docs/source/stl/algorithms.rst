@@ -1,7 +1,7 @@
 Algorithms
 ##########
 
-Many standard algorithms are already implemented in the STL, and they can be easily used with standard :ref:`sec_arrays`, and even :ref:`sec_other_containers` if relevant.
+Many standard algorithms are already implemented in the STL, and they can be easily used with standard :ref:`sec_arrays`, and even :ref:`sec_other_containers` if relevant. You can find more about them in the documentation of the `algorithm library <https://en.cppreference.com/w/cpp/algorithm>`_.
 
 
 .. code-block:: cpp
