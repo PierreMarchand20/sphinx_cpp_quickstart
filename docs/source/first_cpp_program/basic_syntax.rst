@@ -40,6 +40,8 @@ It tells the compiler the size it needs to reserve in memory for every variable,
     */
 
 
+.. _sec_statement_flow_control:
+
 Statements and flow control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

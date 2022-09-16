@@ -49,6 +49,10 @@ numfig_secnum_depth = 2
 # Smart quotes
 smartquotes = True
 
+rst_epilog = """
+.. _Computer Tools: https://pmarchand.pages.math.cnrs.fr/computertools/index.html
+"""
+
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for

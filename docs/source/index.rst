@@ -19,3 +19,4 @@
 
    introduction/index
    first_cpp_program/index
+   stl/index
