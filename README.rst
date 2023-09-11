@@ -13,7 +13,7 @@ It is inspired by other tutorials focusing on "Modern C++" (at least C++11...). 
 
 .. rubric:: How to access this document
 
-This document is written in `Sphinx <https://www.sphinx-doc.org/en/master/>`__ and can be accessed as a `website <https://pmarchand.pages.math.cnrs.fr/cpp_quickstart/>`__ or as a `pdf document <https://pmarchand.pages.math.cnrs.fr/computertools/cpp_quickstart.pdf>`__.
+This document is written in `Sphinx <https://www.sphinx-doc.org/en/master/>`__ and can be accessed as a `website <https://pmarchand.pages.math.cnrs.fr/cpp_quickstart/>`__ or as a `pdf document <https://pmarchand.pages.math.cnrs.fr/cpp_quickstart/cpp_quickstart.pdf>`__.
 
 .. rubric:: Contact
 
