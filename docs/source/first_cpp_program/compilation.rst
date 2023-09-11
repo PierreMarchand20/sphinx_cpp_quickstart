@@ -48,7 +48,7 @@ They are actually two steps in producing an executable:
 
 .. important:: Here are a few important flags when using compilers:
 
-    - ``-g`` generates debug information that can be used with debuggers, such as `GDB <https://www.sourceware.org/gdb/>`_.
+    - ``-g`` generates debug information that can be used with debuggers, such as `GDB <https://www.sourceware.org/gdb/>`__.
     - ``-Wall`` enables almost all compiler warnings. It will help you understand errors in your code.
 
     In the context of this document, we recommend using both flags.
@@ -123,7 +123,7 @@ Once you have done that, you compile your code as follows
 Make
 ~~~~
 
-If you have many files, multiple files compilation can be quickly cumbersome. `Make <https://www.gnu.org/software/make/>`_ is a tool made to leverage this issue. It will figure out automatically which file needs to be recompiled, and recompile just them.
+If you have many files, multiple files compilation can be quickly cumbersome. `Make <https://www.gnu.org/software/make/>`__ is a tool made to leverage this issue. It will figure out automatically which file needs to be recompiled, and recompile just them.
 
 Make knows which files to track, and how to recompile them using a file, called ``Makefile``, which lists the different target to build, and how to build them. Using the same example as previously, you can copy and paste the code from :ref:`makefile` into a file called `Makefile` alongside ``main.cpp``, ``hello_world.cpp`` and ``hello_world.hpp``.
 
@@ -170,7 +170,7 @@ You can modify ``hello_world.cpp``, and recall ``make`` to check that it will on
 CMake
 ~~~~~
 
-At least for me, it is tricky to write makefiles, and they are usually bound to one system. To make a project more platform-independent, but also to easily integrate a C++ project with your favourite source editor (see :ref:`compilation_vscode` for example), another tool is often used in C++ projects: `CMake <https://cmake.org>`_, which will generate a ``Makefile`` for your system.
+At least for me, it is tricky to write makefiles, and they are usually bound to one system. To make a project more platform-independent, but also to easily integrate a C++ project with your favourite source editor (see :ref:`compilation_vscode` for example), another tool is often used in C++ projects: `CMake <https://cmake.org>`__, which will generate a ``Makefile`` for your system.
 
 But before setting up CMake, let's organize better our C++ project. The standard structure for a C++ project is to put *header files* in a folder called ``include``, and source files in another folder called ``src``. Applying this structure to our simple example, you can then put a ``CMakeLists.txt`` file containing :ref:`simple_cmake` at the root of your project. You can find an illustration of this structure in :ref:`cpp_structure`, where ``cpp_example`` is the name of the folder containing our project.
 
@@ -221,7 +221,7 @@ Once you have structured your C++ project and prepared ``CMakeLists.txt``, you c
 
 .. note:: CMake projets usually use an *out-of-source* build strategy, meaning everything build-related will be in a separate folder from the sources (here `include` and `src`). It is considered good practice:
 
-    - It separates source files, whose content is likely to be independent of the operating system and compilers, from files generated for your particular computer, compiler and compilation options. When using a version control system like `Git <https://pmarchand.pages.math.cnrs.fr/computertools/basic_tools/git.html>`_, you can ask it to ignore "build" folders, and to keep track of the source files
+    - It separates source files, whose content is likely to be independent of the operating system and compilers, from files generated for your particular computer, compiler and compilation options. When using a version control system like `Git <https://pmarchand.pages.math.cnrs.fr/computertools/basic_tools/git.html>`__, you can ask it to ignore "build" folders, and to keep track of the source files
     - You can generate several "build" folders (using different compilers, or different compilation options)
 
 Now that the CMake project is generated, you can call ``make`` in ``cpp_example/build`` to generate the executable.
@@ -232,14 +232,14 @@ Now that the CMake project is generated, you can call ``make`` in ``cpp_example/
 Integration with IDEs
 ~~~~~~~~~~~~~~~~~~~~~
 
-By default, CMake will generate a *Unix Makefile* which can then be used to build our C++ program. But CMake can be used to generate many types of "projects" that can be used in an Integrated Development Environment (IDE): Visual Studio, XCode, CodeBlocks, etc, (see `documentation <https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html>`_).
+By default, CMake will generate a *Unix Makefile* which can then be used to build our C++ program. But CMake can be used to generate many types of "projects" that can be used in an Integrated Development Environment (IDE): Visual Studio, XCode, CodeBlocks, etc, (see `documentation <https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html>`__).
 
 Compilation in VS Code
 ======================
 
-If you use VS Code, you can also easily integrate your C++ program using CMake. We refer to VS Code `documentation <https://code.visualstudio.com/docs/cpp/cmake-linux>`_ for using C++ and CMake. But to summarise:
+If you use VS Code, you can also easily integrate your C++ program using CMake. We refer to VS Code `documentation <https://code.visualstudio.com/docs/cpp/cmake-linux>`__ for using C++ and CMake. But to summarise:
 
-- You need to install the extension `CMake Tools <https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools>`_.
+- You need to install the extension `CMake Tools <https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools>`__.
 - Open the folder containing ``CMakeLists.txt`` with VS Code (``cpp_example`` in our example).
 - Use the Command Palette (``maj+ctrl/cmd+P``) and run **CMake: Select Kit** to select a compiler.
 - Use the Command Palette (``maj+ctrl/cmd+P``) and run **CMake: Select Variant** to select a build type (mainly *Release*, asking the compiler to include optimizations, or *Debug*, which is needed for debugging).
@@ -249,7 +249,7 @@ If you use VS Code, you can also easily integrate your C++ program using CMake. 
 Debugging in VS Code
 ====================
 
-If you want to run your executable with a debugger, `GDB <https://www.sourceware.org/gdb/>`_ for example, and you already built your code using *Debug* mode before configuration,
+If you want to run your executable with a debugger, `GDB <https://www.sourceware.org/gdb/>`__ for example, and you already built your code using *Debug* mode before configuration,
 
 - Use the Command Palette (``maj+ctrl/cmd+P``) and run **CMake: Debug** to run and debug the executable.
 
@@ -257,4 +257,4 @@ To help you debug your C++ program, you can use *breakpoints*:
 
 - Click on the left of the line number, it will appear as a red dot.
 
-When running in debug, the C++ program will stop at the breakpoints, you will then see all the current variables, and you will be able to go to the next statement or the next breakpoint. See `Debugging documentation <https://code.visualstudio.com/docs/editor/debugging#_breakpoints>`_ and the `Debugging C++ documentation <https://code.visualstudio.com/docs/cpp/cpp-debug>`_ for more information.
+When running in debug, the C++ program will stop at the breakpoints, you will then see all the current variables, and you will be able to go to the next statement or the next breakpoint. See `Debugging documentation <https://code.visualstudio.com/docs/editor/debugging#_breakpoints>`__ and the `Debugging C++ documentation <https://code.visualstudio.com/docs/cpp/cpp-debug>`__ for more information.

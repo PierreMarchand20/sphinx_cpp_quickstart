@@ -8,7 +8,7 @@ One of the most common containers is an array, meaning values of a given type co
 - Static arrays, whose size is known at compile type, which implies that they have a fixed size.
 - Dynamic arrays, whose size can vary during execution.
 
-Both are available in the STL, with respectively ``std::array`` and ``std::vector``. To interact with objects of these types, you can use *methods*, functions that belong to the definition of these types. To call a method called ``call_method``, which takes an integer as argument, on an object called ``my_object``, you need to write ``my_object.call_method(3)``. In :ref:`code_arrays`, you can see how to use vectors and arrays from STL, and some of their methods. See the section "Member functions" in the documentation of `std::vector <https://en.cppreference.com/w/cpp/container/vector>`_ and `std::array <https://en.cppreference.com/w/cpp/container/array>`_
+Both are available in the STL, with respectively ``std::array`` and ``std::vector``. To interact with objects of these types, you can use *methods*, functions that belong to the definition of these types. To call a method called ``call_method``, which takes an integer as argument, on an object called ``my_object``, you need to write ``my_object.call_method(3)``. In :ref:`code_arrays`, you can see how to use vectors and arrays from STL, and some of their methods. See the section "Member functions" in the documentation of `std::vector <https://en.cppreference.com/w/cpp/container/vector>`__ and `std::array <https://en.cppreference.com/w/cpp/container/array>`_
 
 
 .. code-block:: cpp

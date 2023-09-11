@@ -47,7 +47,7 @@ Statements and flow control
 
 All the usual loops are available:
 
-- If statement: ``if (condition) {statement;}`` where ``condition`` is an expression returning a boolean. You can use the usual `condition operators <https://en.cppreference.com/w/cpp/language/operator_comparison>`_. See :ref:`code_if_statement`
+- If statement: ``if (condition) {statement;}`` where ``condition`` is an expression returning a boolean. You can use the usual `condition operators <https://en.cppreference.com/w/cpp/language/operator_comparison>`__. See :ref:`code_if_statement`
 - For loop: ``for (initialization; condition; increase) {statement;}``. See :ref:`code_for_loop`
 - While loop: ``while (expression) {statement;}``. See :ref:`code_while_loop`
 
