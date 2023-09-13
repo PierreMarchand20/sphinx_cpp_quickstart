@@ -4,11 +4,97 @@ Compilation
 ###########
 
 
-C++ is a :ref:`sec_what_compiled_language`, and thus we need :ref:`sec_follow_along_compilers` to translate C++ code to machine language. In this section, we will see how to build a C++ program using directly compilers, and then using more advanced tools such as :ref:`sec_make` and :ref:`sec_cmake`.
+C++ is a :ref:`compiled language <sec_properties>`, thus we need :ref:`compilers <sec_follow_along_compilers>` to translate C++ code to machine language and produce an executable. In this section, we will see how to build a C++ program using directly compilers, and then using more advanced tools such as :ref:`sec_make` and :ref:`sec_cmake`. But first, we need to better organize our files, and learn more about the process of compilation.
 
 
-Manual
-~~~~~~
+Files and compilation
+~~~~~~~~~~~~~~~~~~~~~
+
+.. _sec_source_files:
+
+C++ Source files
+================
+
+
+Having a single file, like in our first :ref:`example <main_single_file>`, have several disadvantages:
+
+- each change requires recompiling everything,
+- you cannot easily reuse part of your code in other program,
+- it can be difficult to read for large codebase.
+
+That is why it is good practice to divide your code into several files. It is also good to separate *definition* and *declaration* of functions and classes. It makes it easier to read the interface of your functions and classes (names, type of inputs and outputs, etc.) given by the declarations, without having all the definitions at the same place.
+
+.. note:: Declarations are usually written in *header files*, by convention ``.hpp``, and definitions are contained in ``.cpp`` files.
+
+In the case of our simple program, we can encapsulate the line that prints "Hello world" to the standard output into a function called ``print``.
+
+- You can put the declaration of the function into a *header file*, see :ref:`header_multiple_file`.
+- You can put the definition of the function into a different file from ``main.cpp``, see :ref:`cpp_multiple_file`.
+- And finally, you can just add an include statement in ``main.cpp`` to :ref:`main_multiple_file` 
+
+In this new example, the ``include`` statements are used copy/paste the :ref:`header file <header_multiple_file>` so that both ``.cpp`` files have the declaration of the function ``print``.
+
+
+.. code-block:: cpp
+    :caption: Main file with multiple files: ``main.cpp``
+    :name: main_multiple_file
+
+    #include "hello_world.hpp"
+    int main(){
+        print();
+        return 0;
+    }
+
+
+.. code-block:: cpp
+    :name: header_multiple_file
+    :caption: Header file with multiple files: ``hello_world.hpp``
+    :linenos:
+
+    #ifndef HELLO_WORLD_HPP
+    #define HELLO_WORLD_HPP
+
+    #include <iostream>
+    void print();
+
+    #endif
+
+.. code-block:: cpp
+    :caption: Header file with multiple files: ``hello_world.cpp``
+    :name: cpp_multiple_file
+
+    #include "hello_world.hpp"
+    void print(){
+        std::cout << "Hello world!\n";
+    }
+
+.. warning:: 
+    In :ref:`header_multiple_file`, you can see the lines 1,2 and 7 are special, they are called *header guards*. They are here to ensure that the header file is copied/pasted only once in ``.cpp`` files. One common error that can happen without these, is to have a second header file including the first header, while having a ``.cpp`` file including both. In that case the first header would be copied/pasted twice without the header guards.
+
+
+
+Separate compilation
+====================
+
+They are mainly two steps in producing an executable from source code files:
+
+- The compiler produces object files for each C++ source code. They are usually ``.o`` files and contain machine code for every variables, functions and classes defined in their associated ``.o`` file. They also refer to functions and classes declared, but not defined in the headers.
+- Then, it links the object files to produce an executable. One goal of this steps is for the object files to obtain the correct adresses to all the functions and classes compiled in other object files.
+
+.. note:: More exactly, there is another step involving the preprocessor, but I suggest we focus on these two steps. 
+
+
+.. _fig:
+
+.. figure:: ../_static/svg/compilation.drawio.svg
+
+   Compilation process
+
+Compilation for the example from :ref:`sec_source_files` is illustrated in :ref:`fig`. One advantage of the compilation process is that a modification of the definition of the function ``print`` in ``hello_world.cpp`` will not require a recompilation of ``main.cpp`` for example.
+
+
+Manual compilation
+~~~~~~~~~~~~~~~~~~
 
 Single file compilation
 =======================
@@ -22,10 +108,6 @@ To compile the file introduced in :ref:`main_single_file`, you need to use the c
     ./a.out
     
 
-They are actually two steps in producing an executable:
-
-- The compiler produce object files, which contain machine code. They are usually ``.o`` files
-- Then, it links the object files to produce an executable.
 
 .. note:: 
     - To change the name of the output file, you can use the ``-o``  flag.
@@ -57,52 +139,6 @@ They are actually two steps in producing an executable:
 Multiple files compilation
 ==========================
 
-Having a single large file have several disadvantages:
-
-- each change requires recompiling everything,
-- you cannot easily reuse part of your code in other program,
-- it is difficult to read.
-
-That is why it is good practice to divide your code into several files, containing related declarations. In the case of our simple program, we can encapsulate the line that prints "Hello world" to the standard output into a function called ``print``.
-
-- You can put the declaration of the function into a *header file*, see :ref:`header_multiple_file`.
-- You can put the definition of the function into a different file from ``main.cpp``, see :ref:`cpp_multiple_file`.
-- And finally, you can just add an include statement in ``main.cpp`` to :ref:`main_multiple_file` 
-
-.. .. note:: test
-
-
-.. code-block:: cpp
-    :caption: Main file with multiple files: ``main.cpp``
-    :name: main_multiple_file
-
-    #include "hello_world.hpp"
-    int main(){
-        print();
-        return 0;
-    }
-
-
-.. code-block:: cpp
-    :name: header_multiple_file
-    :caption: Header file with multiple files: ``hello_world.hpp``
-
-    #ifndef HELLO_WORLD_HPP
-    #define HELLO_WORLD_HPP
-
-    #include <iostream>
-    void print();
-
-    #endif
-
-.. code-block:: cpp
-    :caption: Header file with multiple files: ``hello_world.cpp``
-    :name: cpp_multiple_file
-
-    #include "hello_world.hpp"
-    void print(){
-        std::cout << "Hello world!\n";
-    }
 
 Once you have done that, you compile your code as follows 
 

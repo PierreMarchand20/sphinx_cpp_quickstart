@@ -10,7 +10,9 @@ I also assume that the reader has basic knowledge about tools such as bash. If t
 Compilers
 ---------
 
-C++ is a :ref:`sec_what_compiled_language`, and thus we need tools to translated C++ code to machine language. Compilers are tools that execute this translation, and thus they are necessary to have on your workstation. Examples of such tools are `g++ <https://gcc.gnu.org>`__ and `clang <https://clang.llvm.org>`__. See their documentation for installation instructions. Note that they are very common tools, and thus, they can usually be easily installed, via a package manager for example.
+C++ is a :ref:`compiled language <sec_what_compiled_language>`, and thus we need tools to translated C++ code to machine language. Compilers are tools that execute this translation, and thus they are necessary to have on your workstation. Examples of such tools are `g++ <https://gcc.gnu.org>`__ and `clang <https://clang.llvm.org>`__. See their documentation for installation instructions. 
+
+.. note:: They are very common tools, and thus, they are usually already available, or they can be easily installed, via a package manager for example.
 
 
 Other tools
