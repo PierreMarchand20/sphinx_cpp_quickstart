@@ -227,23 +227,26 @@ But before setting up CMake, let's organize better our C++ project. The standard
 .. code-block:: cmake
     :name: simple_cmake
     :caption: Simple example of ``CMakeLists.txt``
+    :linenos:
 
+    cmake_minimum_required(VERSION 3.5)
     project(HelloWorld)
-    cmake_minimum_required(VERSION 3.0)
     add_executable(main src/main.cpp src/hello_world.cpp)
     target_include_directories(main PRIVATE include)
     target_compile_features(main PRIVATE cxx_std_11)
-    target_compile_options(main PRIVATE -Wall)
+    target_compile_options(main PRIVATE -Wall -fsanitize=address)
+    target_link_options(main PRIVATE -fsanitize=address)
 
 
 The content of :ref:`simple_cmake` is relatively self-explanatory:
 
-- ``project(HelloWorld)`` defines a CMake project.
-- ``cmake_minimum_required(VERSION 3.0)`` is used to require a modern-enough version of CMake.
-- ``add_executable(main src/main.cpp src/hello_world.cpp)`` defines an executable ``main`` whose source files are ``src/main.cpp`` and ``src/hello_world.cpp`` (paths are given relatively to ``CMakeLists.txt``).
-- ``target_include_directories(main PRIVATE include)`` specifies that to build ``main``, headers can also be found in ``include``.
-- ``target_compile_features(main PRIVATE cxx_std_11)`` set the C++ standard used.
-- ``target_compile_options(main PRIVATE -Wall)`` adds ``-Wall`` flags, which enables almost all warnings.
+1. ``cmake_minimum_required(VERSION 3.5)`` is used to require a modern-enough version of CMake.
+2. ``project(HelloWorld)`` defines a CMake project.
+3. ``add_executable(main src/main.cpp src/hello_world.cpp)`` defines an executable ``main`` whose source files are ``src/main.cpp`` and ``src/hello_world.cpp`` (paths are given relatively to ``CMakeLists.txt``).
+4. ``target_include_directories(main PRIVATE include)`` specifies that to build ``main``, headers can also be found in ``include``.
+5. ``target_compile_features(main PRIVATE cxx_std_11)`` set the C++ standard used.
+6. ``target_compile_options(main PRIVATE -Wall -fsanitize=address)`` adds to the compilation, ``-Wall`` flag, which enables almost all warnings, ``-fsanitize=address``, which is a tool to catch errors at runtime (out-of-bounds accesses in an array for example).
+7. ``target_link_options(main PRIVATE -fsanitize=address)`` adds to the linking, ``-fsanitize=address``.
 
 Once you have structured your C++ project and prepared ``CMakeLists.txt``, you can use :ref:`generate_makefile_cmake` to generate all the necessary files and a Makefile into a folder ``build`` in ``cpp_example``.
 
@@ -261,6 +264,8 @@ Once you have structured your C++ project and prepared ``CMakeLists.txt``, you c
     - You can generate several "build" folders (using different compilers, or different compilation options)
 
 Now that the CMake project is generated, you can call ``make`` in ``cpp_example/build`` to generate the executable.
+
+.. warning:: You may want to remove the flag ``-fsanitize=address`` from compilation and linking if you want better performance from the resulting executable. But in all other cases, it's best to keep it.
 
 
 .. _compilation_vscode:
