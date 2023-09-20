@@ -233,7 +233,7 @@ But before setting up CMake, let's organize better our C++ project. The standard
     project(HelloWorld)
     add_executable(main src/main.cpp src/hello_world.cpp)
     target_include_directories(main PRIVATE include)
-    target_compile_features(main PRIVATE cxx_std_11)
+    target_compile_features(main PRIVATE cxx_std_17)
     target_compile_options(main PRIVATE -Wall -fsanitize=address)
     target_link_options(main PRIVATE -fsanitize=address)
 
@@ -244,7 +244,7 @@ The content of :ref:`simple_cmake` is relatively self-explanatory:
 2. ``project(HelloWorld)`` defines a CMake project.
 3. ``add_executable(main src/main.cpp src/hello_world.cpp)`` defines an executable ``main`` whose source files are ``src/main.cpp`` and ``src/hello_world.cpp`` (paths are given relatively to ``CMakeLists.txt``).
 4. ``target_include_directories(main PRIVATE include)`` specifies that to build ``main``, headers can also be found in ``include``.
-5. ``target_compile_features(main PRIVATE cxx_std_11)`` set the C++ standard used.
+5. ``target_compile_features(main PRIVATE cxx_std_17)`` set the C++ standard used.
 6. ``target_compile_options(main PRIVATE -Wall -fsanitize=address)`` adds to the compilation, ``-Wall`` flag, which enables almost all warnings, ``-fsanitize=address``, which is a tool to catch errors at runtime (out-of-bounds accesses in an array for example).
 7. ``target_link_options(main PRIVATE -fsanitize=address)`` adds to the linking, ``-fsanitize=address``.
 

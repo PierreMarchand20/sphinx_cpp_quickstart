@@ -39,6 +39,7 @@ It tells the compiler the size it needs to reserve in memory for every variable,
                  ~ ^ ~~~
     */
 
+.. warning:: ``std::string`` is not part of the core language, but it is defined in the C++ standard library. You need to add ``#include <string>``.
 
 .. _sec_statement_flow_control:
 
@@ -112,6 +113,7 @@ As you can see in :ref:`code_functions`, a function can also have no parameter o
 .. important:: Functions can be overloaded. It means that you can define functions with the same name, but different parameters. See the two print functions in :ref:`code_functions`. But you cannot overload functions with only their return type. In our examples, you cannot define ``int print()``.
 
     
+.. _sec_references:
 
 References
 ~~~~~~~~~~

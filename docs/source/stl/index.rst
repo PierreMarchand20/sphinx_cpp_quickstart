@@ -10,4 +10,4 @@ We review here a few features available.
 
     container
     algorithms
-    scope
+    memory
