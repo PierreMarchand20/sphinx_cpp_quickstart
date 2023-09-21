@@ -63,7 +63,7 @@ html_theme = "furo"
 html_title = "C++ Quick Start"
 
 html_theme_options = {
-    "source_repository": "https://github.com/PierreMarchand20/sphinx_cpp_quickstart.git",
+    "source_repository": "https://github.com/PierreMarchand20/sphinx_cpp_quickstart/",
     "source_branch": "main",
     "source_directory": "docs/source",
 }
