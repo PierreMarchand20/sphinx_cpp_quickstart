@@ -21,3 +21,4 @@
    first_cpp_program/index
    stl/index
    object_oriented/index
+   PDF version <https://pmarchand.pages.math.cnrs.fr/cpp_quickstart/cpp_quickstart.pdf>
