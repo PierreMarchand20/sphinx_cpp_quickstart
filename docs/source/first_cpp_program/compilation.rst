@@ -24,7 +24,7 @@ Having a single file, like in our first :ref:`example <main_single_file>`, have 
 
 That is why it is good practice to divide your code into several files. It is also good to separate *definition* and *declaration* of functions and classes. It makes it easier to read the interface of your functions and classes (names, type of inputs and outputs, etc.) given by the declarations, without having all the definitions at the same place.
 
-.. note:: Declarations are usually written in *header files*, by convention ``.hpp``, and definitions are contained in ``.cpp`` files.
+.. important:: Declarations are usually written in *header files*, by convention ``.hpp``, and definitions are contained in ``.cpp`` files.
 
 In the case of our simple program, we can encapsulate the line that prints "Hello world" to the standard output into a function called ``print``.
 
@@ -150,8 +150,7 @@ Once you have done that, you compile your code as follows
 
 
 - You can recompile separately ``main.cpp`` and ``hello_world.cpp``. So that you just need to recompile the files you modified, and redo the linking to produce the executable.
-- You can potentially include ``main.cpp`` in some other program, making your code more easily available.
-- And finally, the files are smaller making them easier to read.
+- And the files are smaller making them easier to read.
 
 
 .. _sec_make:

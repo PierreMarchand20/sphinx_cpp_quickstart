@@ -8,11 +8,11 @@ Short History
 
 C++ is programming language introduced by `Bjarne Stroustrup <https://en.wikipedia.org/wiki/Bjarne_Stroustrup>`__ in 1985. It is initially derived from the `C programming language <https://en.wikipedia.org/wiki/C_(programming_language)>`__, adding multiple new features.
 
-.. warning:: It is possible to write C-like code in a C++ program, but it is generally not considered as a good practice. The common 
+.. warning:: It is possible to write C-like code in a C++ program, but it is generally not considered as a good practice.
 
 Since it has been introduced, C++ became standardized by the International Organization for Standardization (ISO), meaning that each new version of the language is defined by a technical document published by ISO and written by an international committee of experts.
 
-The current versions are C++03, C++11, C++14, C++17, C++20 (the current version) and C++23 (the forthcoming version). In this document, we will mainly use features from C++14.
+The current versions are C++03, C++11, C++14, C++17, C++20 (the current version) and C++23 (the forthcoming version). In this document, we will mainly use features from C++17.
 
 .. _sec_properties:
 

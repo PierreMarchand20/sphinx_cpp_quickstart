@@ -4,6 +4,7 @@ Basic syntax
 Code examples should be put in a function *main* and compiled as we have seen in :ref:`sec_compilation`.
 
 .. _sec_variable_types:
+
 Variables and types
 ~~~~~~~~~~~~~~~~~~~
 

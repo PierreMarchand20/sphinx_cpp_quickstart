@@ -21,7 +21,7 @@ One of the main feature of C++, one of the concept that makes C++ more that just
 Pointers
 ~~~~~~~~
 
-First, we need to explain what is a pointer. A pointer is a variable that stores the address in memory of a variable. For example, in :ref:`code_pointer_variable`, ``pointer_to_a`` is a variable containing the address of ``a``, and to get the address from ``a`` we used ``&``. If you try to display it with ``std::cout``, it will print its address in memory. You can directly use methods from the pointed variable's type using ``->``, or you can access the underlying variable by "dereferencing" the pointer using ``*``.
+A pointer is a variable that stores the address in memory of a variable. For example, in :ref:`code_pointer_variable`, ``pointer_to_a`` is a variable containing the address of ``a``, and to get the address from ``a`` we used ``&``. If you try to display it with ``std::cout``, it will print its address in memory. You can directly use methods from the pointed variable's type using ``->``, or you can access the underlying variable by "dereferencing" the pointer using ``*``.
 
 .. code-block:: cpp
     :caption: Pointer variable
@@ -63,4 +63,4 @@ To avoid these issues, the idea is to use :ref:`RAII <sec_scope>`. We tie the li
     owning_ptr_to_a_vector = std::make_unique<std::vector<int>>(10);
     std::cout << owning_ptr_to_a_vector->size() << "\n";
 
-.. note:: In C, one uses ``malloc`` and ``free`` to allocate and free memory. In C++, it is also possible with ``new`` and ``delete``, but it is discouraged since ``std::unique_ptr`` does it for you automatically. But it is not rare to see manual memory management in legacy C++ code.
+.. note:: In C, one uses ``malloc`` and ``free`` to allocate and free memory. In C++, it is also possible with ``new`` and ``delete``, but it is discouraged since ``std::unique_ptr`` does it for you automatically. But it is not rare to see manual memory management in legacy C++ code, or specialized library.
