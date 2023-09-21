@@ -1,5 +1,5 @@
-Classes and objets
-##################
+Classes and objects
+###################
 
 We saw in :ref:`sec_variable_types` that the language itself provides common types like numerical types (``int``, ``float``, etc.), and in :ref:`sec_cpp_standard_library`, we gave a few examples of predefined types such as ``std::vector``. One can also define its own custom types for its particular needs. In C++, a type is defined with the keywords ``class`` or ``struct``, and we call *objects* particular instances of a type.
 
@@ -153,9 +153,26 @@ Other symbols can be defined as functions, see lines 21-26 from :ref:`code_custo
 
 
 
-.. Life cycle of the custom object
-.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Life cycle of a custom object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. Some member functions and operators are special because they are related to the lifetime of objects:
+Some member functions and operators are special because they are related to the lifetime of objects:
 
-.. - ``Point()``
+- Constructors and in particular the `default constructor <https://en.cppreference.com/w/cpp/language/default_constructor>`__ which is used with ``Point A;``
+- `Copy constructors <https://en.cppreference.com/w/cpp/language/copy_constructor>`__, its declaration is ``Point(const Point&)``, and it is used with ``Point B(A);``
+- `Copy assignment <Copy assignment operator>`__, its declaration is ``Point& operator=(Point)``, and it is used with ``Point B=A;``
+- `Destructors <https://en.cppreference.com/w/cpp/language/destructor>`__, ``~Point()`` which is automatically called when exiting the scope where the object is defined.
+
+They can be difficult to implement, that is why they are implicitly defined in some cases. But the actual rules to understand when they are implicitly defined and when they are not are quite subtle. To keep things simple:
+
+**Try to always use data members from the core language or the C++ standard library (or objects that are composed of them).** 
+
+- You can rely on their own constructors/copy constructor/copy assignment/destructor to define the ones of your class, and they will be implicitly defined as long as you do not define one of them manually. This is called the `rule of zero <https://en.cppreference.com/w/cpp/language/rule_of_three>`_ 
+- The only exception being the default constructor that is not implicitly defined as soon as you defined another constructor. To automatically define it using the default constructors of each data members, you can add in the class definition ``Point() = default;``.
+
+.. note:: A typical way to **break** this rule is to have a pointer as a data member and to manually manage the memory with ``new`` and ``delete``. It is one reason why it is discouraged.
+
+
+.. important:: Not all types are copyable, for example, ``std::unique_ptr`` from :ref:`sec_smart_pointer` is not. Thus, having a ``std::unique_ptr`` as a data member makes the class non-copyable.
+
+.. note:: Move semantic is out of the scope, but the remarks here extend to `Move constructor <https://en.cppreference.com/w/cpp/language/move_constructor>`__ and `Move assignment <https://en.cppreference.com/w/cpp/language/move_assignment>`__.

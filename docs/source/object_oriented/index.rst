@@ -9,4 +9,5 @@ Object-oriented programming allows defining a specific interface to interact wit
 .. toctree::
     :maxdepth: 2
 
-    declaration
+    classes_objects
+    polymorphism

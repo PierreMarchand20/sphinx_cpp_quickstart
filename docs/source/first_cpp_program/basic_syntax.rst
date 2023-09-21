@@ -207,8 +207,17 @@ But, what if we want to avoid copying an argument of the function (because it is
 
 .. note:: If you use an IDE with a static analysis tool, you do not even need to compile to see that there is an issue in :ref:`code_functions_by_constreference`. The IDE should tell you that ``b=3`` is not possible. But if you try to compile, the compiler will show an error.
 
-.. https://www.greenteapress.com/thinkcpp/thinkCScpp.pdf
+.. _sec_scope:
 
-.. https://medium.com/@dmitryrastorguev/teach-yourself-c-where-to-start-ce496538c608
+Scope and RAII
+~~~~~~~~~~~~~~
 
-.. https://cplusplus.com/doc/tutorial/namespaces/
+Each identifier (variables, functions, ...) defined in a C++ program has a *scope* (delimited by a pair of curly brackets ``{..}``), which is a region of the program where it can be used. In particular for variables, a scope defines its lifetime. Objects are destructed in reverse order of initialization when exiting their scope.
+
+.. note:: You can also define global variables, outside any pair of curly brackets, but this is usually considered bad practice.
+
+One of the main feature of C++, one of the concept that makes C++ more that just C with classes is how you can handle resources (for example memory, files). In C, you need to allocate a resource, so you can use it, and then you need to delete the object to free its memory. In C++, resources can be handled automatically by binding their life cycle to the lifetime of an object.
+
+.. important:: This feature is called `RAII <https://en.cppreference.com/w/cpp/language/raii>`__ for *Resource Acquisition Is Initialization*, but one important point is that the resource is released automatically when the associated object is destructed.
+
+Examples will be given in :ref:`sec_pointers` for managing automatically memory allocation. 
