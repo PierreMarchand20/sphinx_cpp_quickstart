@@ -72,6 +72,7 @@ In this new example, the ``include`` statements are used copy/paste the :ref:`he
     In :ref:`header_multiple_file`, you can see the lines 1,2 and 7 are special, they are called *header guards*. They are here to ensure that the header file is copied/pasted only once in ``.cpp`` files. One common error that can happen without these, is to have a second header file including the first header, while having a ``.cpp`` file including both. In that case the first header would be copied/pasted twice without the header guards.
 
 
+.. _sec_separation_compilation:
 
 Separate compilation
 ====================

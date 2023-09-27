@@ -5,7 +5,7 @@ C++ Quick Start
 
 The purpose of this document is to give a good starting point to learn C++. It will focus on basic features of the language, using modern good practices. References to more advanced features may be given.
 
-It is inspired by other tutorials focusing on "Modern C++" (at least C++11...). Here are a few references:
+It is inspired by other tutorials focusing on "Modern C++" (at least C++14...). Here are a few references:
 
 - `Microsoft documentation <https://learn.microsoft.com/en-us/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-170>`_
 - Videos of Kate Gregory like `Stop teaching C <https://youtu.be/YnWhqhNdYyk>`__ 

@@ -41,7 +41,7 @@ It tells the compiler the size it needs to reserve in memory for every variable,
                  ~ ^ ~~~
     */
 
-.. warning:: ``std::string`` is not part of the core language, but it is defined in the C++ standard library. You need to add ``#include <string>``.
+.. warning:: ``std::string`` is not part of the core language, but it is defined in the :ref:`sec_cpp_standard_library`. You need to add ``#include <string>``.
 
 .. _sec_statement_flow_control:
 
@@ -87,12 +87,13 @@ All the usual loops are available:
         n+=1;
     }
 
+
+.. _sec_functions:
+
 Functions
 ~~~~~~~~~
 
-A function is defined with a return type, a name, typed parameters and statements
-
-As you can see in :ref:`code_functions`, a function can also have no parameter or a return type ``void``, meaning that it returns nothing.
+A function's declaration is composed by its name, its return type, its parameters' type, this set is also called the function's *prototype*. As you can see in :ref:`code_functions`, a function can also have no parameter or a return type ``void``, meaning that it returns nothing.
 
 
 .. code-block:: cpp

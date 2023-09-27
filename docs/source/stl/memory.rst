@@ -45,13 +45,15 @@ Common issues with pointers appear when a pointer "owns" the variable it points 
 
 To avoid these issues, the idea is to use :ref:`RAII <sec_scope>`. We tie the lifetime of the underlying variable to the lifetime of a type representing a pointer which owns its data. The latter is implemented in the C++ standard library as ``std::unique_ptr``. 
 
+To create a ``std::unique_ptr<T>`` to an object of type ``T``, one has to use ``make_unique<T>`` whose input parameters are the ones used to construct directly an object ``T``.
+
 .. code-block:: cpp
     :caption: Example with ``std::unique_ptr``
     :name: code_unique_ptr
 
-    # you need to use #include <memory>
+    // you need to use #include <memory>
     std::unique_ptr<std::vector<int>> owning_ptr_to_a_vector;
     owning_ptr_to_a_vector = std::make_unique<std::vector<int>>(10);
-    std::cout << owning_ptr_to_a_vector->size() << "\n";
+    std::cout << owning_ptr_to_a_vector->size() << "\n"; // its size is 10
 
 .. note:: In C, one uses ``malloc`` and ``free`` to allocate and free memory. In C++, it is also possible with ``new`` and ``delete``, but it is discouraged since ``std::unique_ptr`` does it for you automatically. But it is not rare to see manual memory management in legacy C++ code, or specialized library.

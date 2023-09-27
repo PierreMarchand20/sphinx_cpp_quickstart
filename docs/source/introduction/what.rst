@@ -29,4 +29,4 @@ Properties of C++
 
   .. note:: On the contrary, Python is dynamically-type language, each variable has a type, but it does not know the type before the program is executed.
 
-- It has two main components: the core language and the `C++ Standard Library <https://en.wikipedia.org/wiki/C%2B%2B_Standard_Library>`__. The latter is a collection of containers and algorithms built on the former, and both are standardized by ISO.
+- It has two main components: the core language and the `C++ Standard Library <https://en.wikipedia.org/wiki/C%2B%2B_Standard_Library>`__. The latter is a collection of containers, algorithms and many other tools built on the former. Both are standardized by ISO.
