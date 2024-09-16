@@ -121,7 +121,7 @@ A function's declaration is composed by its name, its return type, its parameter
 References
 ~~~~~~~~~~
 
-A reference in C++ can be seen as an alias for a variable, it is just a new name for a variable. For a variable of type ``T``, the type for references to variables of such type is ``T&``. See :ref:`code_reference` where we used a ``int`` variable, and a reference to this variable, whose type is ``int &``.
+A reference in C++ can be seen as an alias for a variable, it is just a new name for a variable. For a variable of type ``T``, the type for references to variables of such type is ``T&``. See :ref:`code_reference` where we used a ``string`` variable, and a reference to this variable, whose type is ``string &``.
 
 
 .. code-block:: cpp
@@ -138,7 +138,7 @@ The primary use of references is related to function parameters. In :ref:`code_f
 
 .. code-block:: cpp
     :name: code_functions_by_value
-    :caption: Examples of passing parameters by value
+    :caption: Example of passing parameters by value
 
     #include <string>
     #include <iostream>
@@ -151,7 +151,7 @@ The primary use of references is related to function parameters. In :ref:`code_f
     int main(){
         std::string a = "Not modified";
         example_by_value(a);
-        std::cout << a << "\n";
+        std::cout << a << "\n"; // prints Not Modified
     }
 
 To summarize, when passing by value:
@@ -164,7 +164,7 @@ An alternative is to pass parameters *by reference*. In :ref:`code_functions_by_
 
 .. code-block:: cpp
     :name: code_functions_by_reference
-    :caption: Example of passing parameters by value
+    :caption: Example of passing parameters by reference
 
     #include <string>
     #include <iostream>
@@ -177,7 +177,7 @@ An alternative is to pass parameters *by reference*. In :ref:`code_functions_by_
     int main(){
         std::string a = "Not modified";
         example_by_reference(a);
-        std::cout << a << "\n";
+        std::cout << a << "\n"; // prints Modified
     }
 
 To summarize, when passing by reference:
@@ -202,9 +202,17 @@ But, what if we want to avoid copying an argument of the function (because it is
 
     int main(){
         std::string a = "Not modified";
-        example_by_constreference(a);
+        example_by_const_reference(a);
         std::cout << a << "\n";
     }
+
+    /* Error from compiler:
+    error: no viable overloaded '='
+    b = "Modified";
+    ~ ^ ~~~~~~~~~~
+    ******string:905:19: note: candidate function not viable: 'this' argument has type 'const std::string' (aka 'const basic_string<char, char_traits<char>, allocator<char>>'), but method is not marked const
+    basic_string& operator=(const basic_string& __str);
+    */
 
 .. note:: If you use an IDE with a static analysis tool, you do not even need to compile to see that there is an issue in :ref:`code_functions_by_constreference`. The IDE should tell you that ``b=3`` is not possible. But if you try to compile, the compiler will show an error.
 

@@ -151,6 +151,9 @@ Other symbols can be defined as functions, see lines 21-26 from :ref:`code_custo
         }
     };
 
+    Point operator+(const Point &u, const Point &v);
+    std::ostream &operator<<(std::ostream &out, const Point &v);
+
     // in point.cpp
     #include "point.hpp"
     Point operator+(const Point &u, const Point &v){
@@ -178,7 +181,7 @@ Some member functions and operators are special because they are related to the 
 
 - Constructors and in particular the `default constructor <https://en.cppreference.com/w/cpp/language/default_constructor>`__ which is used with ``Point A;``
 - `Copy constructors <https://en.cppreference.com/w/cpp/language/copy_constructor>`__, its declaration is ``Point(const Point&)``, and it is used with ``Point B(A);``
-- `Copy assignment <Copy assignment operator>`__, its declaration is ``Point& operator=(Point)``, and it is used with ``Point B=A;``
+- `Copy assignment <https://en.cppreference.com/w/cpp/language/copy_assignment>`__, its declaration is ``Point& operator=(Point)``, and it is used with ``Point B=A;``
 - `Destructors <https://en.cppreference.com/w/cpp/language/destructor>`__, ``~Point()`` which is automatically called when exiting the scope where the object is defined.
 
 They can be difficult to implement, that is why they are implicitly defined in some cases. But the actual rules to understand when they are implicitly defined and when they are not are quite subtle. To keep things simple:
@@ -223,7 +226,10 @@ So far, we have put the definitions and declarations of the member functions in 
         Point &operator*=(double t);
     };
 
-    // in point.hpp
+    Point operator+(const Point &u, const Point &v);
+    std::ostream &operator<<(std::ostream &out, const Point &v);
+
+    // in point.cpp
     #include "point.hpp"
     double Point::x() const { return m_y;}
     double Point::y() const { return m_y; }

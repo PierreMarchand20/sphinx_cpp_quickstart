@@ -19,7 +19,7 @@ A pointer is a variable that stores the address in memory of a variable. For exa
     std::vector<int>* pointer_to_a = &a;
     std::cout << pointer_to_a <<" "<< pointer_to_a->size() <<" "<< (*pointer_to_a)[0] <<"\n";
 
-:ref:`sec_pointers` and :ref:`sec_references` are similar in the sense that they are both mechanisms to access an underlying variable. But they are key differences that we highlight here:
+:ref:`sec_pointers` and :ref:`sec_references` are similar in the sense that they are both mechanisms to access an underlying variable. But there are key differences that we highlight here:
 
 .. list-table:: References vs pointers
    :widths: 25 25
@@ -38,7 +38,7 @@ A pointer is a variable that stores the address in memory of a variable. For exa
 Smart pointers
 ~~~~~~~~~~~~~~
 
-Common issues with pointers appear when a pointer "owns" the variable it points to. In other words, it manages the lifetime of the underlying variable. With "raw" pointers as in the :ref:`previous <sec_pointers>` section, you need to allocate manually, give its address to the pointer, and free the memory manually before the end of the program. Typical errors are 
+Common issues with pointers appear when a pointer "owns" the variable it points to, in other words, when it manages the lifetime of the underlying variable. With "raw" pointers as in the :ref:`previous <sec_pointers>` section, you need to allocate manually, give its address to the pointer, and free the memory manually before the end of the program. Typical errors are 
 
 - forgetting to free the memory, *memory leaks*,
 - freeing the memory too early, so that the pointer points to nothing, *dangling pointers*.

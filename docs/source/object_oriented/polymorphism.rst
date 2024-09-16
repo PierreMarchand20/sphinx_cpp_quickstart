@@ -132,7 +132,7 @@ It may be better to actually not be able to construct an instance of a base clas
     :caption: Inheritance with pure virtual member function
     :name: code_inheritance_with_pure_member_function
     :linenos:
-    :emphasize-lines: 10,30
+    :emphasize-lines: 10,27
 
     // in character.hpp
     #include <string>

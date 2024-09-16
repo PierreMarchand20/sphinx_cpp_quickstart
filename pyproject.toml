@@ -1,0 +1,29 @@
+[project]
+name = "C++ QuickStart"
+version = "0.1"
+authors = [{ name = "Pierre Marchand", email = "test@test.com" }]
+description = "Introduction to C++"
+
+readme = { file = "README.rst", content-type = "text/x-rst" }
+requires-python = ">=3.7"
+license = { text = "MIT License" }
+classifiers = [
+  "Framework :: Sphinx",
+  # "Programming Language :: Python :: 3",
+  # "License :: OSI Approved :: MIT License",
+  # "Operating System :: MacOS",
+  # "Operating System :: Unix"
+]
+keywords = ["C++", "sphinx"]
+dependencies = [
+  "sphinxcontrib.asciinema",
+  "sphinxcontrib-svg2pdfconverter",
+  "sphinx-copybutton",
+  "sphinx-contributors",
+  "furo",
+]
+
+[project.urls]
+Homepage = "https://pmarchand.pages.math.cnrs.fr/cpp_quickstart/"
+"Issue Tracker" = "https://github.com/PierreMarchand20/sphinx_cpp_quickstart/issues"
+"Source Code" = "https://github.com/PierreMarchand20/sphinx_cpp_quickstart"
