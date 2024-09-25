@@ -91,7 +91,7 @@ Once we have constructed our object, we want to interact with it. Thus, we can a
             Point(double x, double y): m_x(x), m_y(y) {}
             double x() const {return m_x;}
             double y() const {return m_y;}
-            double norm() const {return sqrt(m_x*m_x+m_y*m_y);}
+            double squared_norm() const {return m_x * m_x + m_y * m_y;}
 
     };
 
@@ -99,7 +99,7 @@ Once we have constructed our object, we want to interact with it. Thus, we can a
     #include "point.hpp"
     int main(){
         Point my_point(1,2);
-        std::cout << my_point.x() << my_point.y() << " " << my_point.norm() <<"\n";
+        std::cout << my_point.x() << my_point.y() << " " << my_point.squared_norm() <<"\n";
     }
 
 
