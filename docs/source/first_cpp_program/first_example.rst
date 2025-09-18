@@ -17,7 +17,7 @@ In the following example, we write our first C++ function that prints "Hello wor
 
 The function's name is **main**, it takes no argument, the output type is an integer, called **int** in C++, and it returns 0. Its content is delimited by the brackets, each statement is ended by ``;``, and to print the string ``"Hello world!\n"`` to the terminal, it uses ``std::cout <<``.
 
-.. important:: One strength of C++ is its :ref:`standard library<sec_properties>`, which provides common data structures and functions. We use here the ``include`` statement to include parts of the standard library, and in this example, the part related to inputs and outputs, which contained in particular the function ``cout``.
+.. important:: One strength of C++ is its :ref:`standard library <introduction/what:properties of c++>`, which provides common data structures and functions. We use here the ``include`` statement to include parts of the standard library, and in this example, the part related to inputs and outputs, which contained in particular the function ``cout``.
 
 .. note:: The prefix ``std::`` (called namespace) is the common prefix for the standard library, it is here to disambiguate the case where another included library would define functions with the same name (another ``cout`` function for example).
 

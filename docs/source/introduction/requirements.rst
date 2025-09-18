@@ -1,16 +1,14 @@
 To follow along
 ###############
 
-It is assumed that the reader has a unix-like operating system (Linux, macOS,...). In other words, we assume the reader do not have Windows, but see `About Windows <https://pmarchand.pages.math.cnrs.fr/computertools/introduction/setup.html#about-windows>`__ from `Computer Tools`_ if you are in this case.
+It is assumed that the reader has a unix-like operating system (Linux, macOS, ...). In other words, we assume the reader do not have Windows, but see `About Windows <https://pmarchand.pages.math.cnrs.fr/computertools/introduction/setup.html#about-windows>`__ from `Computer Tools`_ if you are in this case.
 
 I also assume that the reader has basic knowledge about tools such as bash. If this is not the case, we refer to `Computer Tools`_, and in particular its section on `basic tools <https://pmarchand.pages.math.cnrs.fr/computertools/basic_tools/index.html>`__.
-
-.. _sec_follow_along_compilers:
 
 Compilers
 ---------
 
-C++ is a :ref:`compiled language <sec_properties>`, and thus we need tools to translated C++ code to machine language. Compilers are tools that execute this translation, and thus they are necessary to have on your workstation. Examples of such tools are `g++ <https://gcc.gnu.org>`__ and `clang++ <https://clang.llvm.org>`__. See their documentation for installation instructions. 
+C++ is a :ref:`compiled language <introduction/what:properties of c++>`, and thus we need tools to translate C++ code to machine language. Compilers are tools that execute this translation, and thus they are necessary to have on your workstation. Examples of such tools are `g++ <https://gcc.gnu.org>`__ and `clang++ <https://clang.llvm.org>`__. See their documentation for installation instructions. 
 
 .. note:: They are very common tools, and thus, they are usually already available, or they can be easily installed, via a package manager for example.
 

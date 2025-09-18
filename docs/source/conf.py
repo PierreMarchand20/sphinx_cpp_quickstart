@@ -30,6 +30,7 @@ author = "Pierre Marchand"
 extensions = [
     "sphinxcontrib.asciinema",
     "sphinxcontrib.rsvgconverter",
+    "sphinx.ext.autosectionlabel",
     "sphinx_copybutton",
     "sphinx_contributors",
 ]
@@ -48,6 +49,9 @@ numfig_secnum_depth = 2
 
 # Smart quotes
 smartquotes = True
+
+# Auto section
+autosectionlabel_prefix_document = True
 
 rst_epilog = """
 .. _Computer Tools: https://pmarchand.pages.math.cnrs.fr/computertools/index.html

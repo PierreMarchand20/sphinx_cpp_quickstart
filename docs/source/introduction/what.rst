@@ -1,8 +1,6 @@
 What is C++?
 ############
 
-.. _sec_short_history:
-
 Short History
 -------------
 
@@ -13,8 +11,6 @@ C++ is programming language introduced by `Bjarne Stroustrup <https://en.wikiped
 Since it has been introduced, C++ became standardized by the International Organization for Standardization (ISO), meaning that each new version of the language is defined by a technical document published by ISO and written by an international committee of experts.
 
 The current versions are C++03, C++11, C++14, C++17, C++20, C++23 (the current version) and C++26 (the forthcoming version). In this document, we will mainly use features from C++17.
-
-.. _sec_properties:
 
 Properties of C++
 -----------------

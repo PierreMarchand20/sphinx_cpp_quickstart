@@ -1,9 +1,7 @@
 Basic syntax
 ############
 
-Code examples should be put in a function *main* and compiled as we have seen in :ref:`sec_compilation`.
-
-.. _sec_variable_types:
+Code examples should be put in a function *main* and compiled as we have seen in :ref:`first_cpp_program/compilation:compilation`.
 
 Variables and types
 ~~~~~~~~~~~~~~~~~~~
@@ -41,9 +39,7 @@ It tells the compiler the size it needs to reserve in memory for every variable,
                  ~ ^ ~~~
     */
 
-.. warning:: ``std::string`` is not part of the core language, but it is defined in the :ref:`sec_cpp_standard_library`. You need to add ``#include <string>``.
-
-.. _sec_statement_flow_control:
+.. warning:: ``std::string`` is not part of the core language, but it is defined in the :ref:`stl/index:c++ standard library`. You need to add ``#include <string>``.
 
 Statements and flow control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -88,8 +84,6 @@ All the usual loops are available:
     }
 
 
-.. _sec_functions:
-
 Functions
 ~~~~~~~~~
 
@@ -115,8 +109,6 @@ A function's declaration is composed by its name, its return type, its parameter
 
 .. important:: Functions can be overloaded. It means that you can define functions with the same name, but different parameters. See the two print functions in :ref:`code_functions`. But you cannot overload functions with only their return type. In our examples, you cannot define ``int print()``.
 
-    
-.. _sec_references:
 
 References
 ~~~~~~~~~~
@@ -157,7 +149,7 @@ The primary use of references is related to function parameters. In :ref:`code_f
 To summarize, when passing by value:
 
 - The variables used as arguments in the function call cannot be modified.
-- A copy is done between the variables used as arguments in the function call, and the variables used in the function body. This copy can be costly if the variable have a large size (with a large array for example).
+- A copy is done between the variables used as arguments in the function call, and the variables used in the function body. This copy can be costly if the variable has a large size (with a large array for example).
 
 
 An alternative is to pass parameters *by reference*. In :ref:`code_functions_by_reference`, ``b`` is an alias for ``a``, but the content is the same. Modifying ``b`` does modify ``a``.
@@ -214,9 +206,8 @@ But, what if we want to avoid copying an argument of the function (because it is
     basic_string& operator=(const basic_string& __str);
     */
 
-.. note:: If you use an IDE with a static analysis tool, you do not even need to compile to see that there is an issue in :ref:`code_functions_by_constreference`. The IDE should tell you that ``b=3`` is not possible. But if you try to compile, the compiler will show an error.
+.. note:: If you use an IDE with a static analysis tool, you do not even need to compile to see that there is an issue in :ref:`code_functions_by_constreference`. The IDE should tell you that ``b= "Modified"`` is not possible. But if you try to compile, the compiler will show an error.
 
-.. _sec_scope:
 
 Scope and RAII
 ~~~~~~~~~~~~~~
@@ -229,4 +220,4 @@ One of the main feature of C++, one of the concept that makes C++ more that just
 
 .. important:: This feature is called `RAII <https://en.cppreference.com/w/cpp/language/raii>`__ for *Resource Acquisition Is Initialization*, but one important point is that the resource is released automatically when the associated object is destructed.
 
-Examples will be given in :ref:`sec_pointers` for managing automatically memory allocation. 
+Examples will be given in :ref:`stl/memory:pointers` for managing automatically memory allocation. 

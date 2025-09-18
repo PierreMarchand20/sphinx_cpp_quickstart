@@ -3,8 +3,8 @@ Polymorphism
 
 In programming languages, `polymorphism <https://en.wikipedia.org/wiki/Polymorphism_(computer_science)>`__ is a concept referring to entities (variable, function or object) having *multiple forms*, meaning multiple definitions. We already saw two examples previously:
 
-- :ref:`function overloading <sec_functions>`: a function can have multiple definitions depending on its number of parameters and their types,
-- :ref:`sec_operator_overloading`: the same operator (for example ``+``) can have multiple meaning for different types.
+- :ref:`function overloading <first_cpp_program/basic_syntax:functions>`: a function can have multiple definitions depending on its number of parameters and their types,
+- :ref:`object_oriented/classes_objects:operator overloading`: the same operator (for example ``+``) can have multiple meaning for different types.
 
 In these two examples, the specific form taken by the function or the operator is chosen at compile-time. In the following, we will present *runtime polymorphism*, which is related to inheritance and overriding function members.
 
@@ -62,9 +62,7 @@ In this example,
         farmer_as_character.who_am_i(); // My name is John and I am a character with 10 life points.
     }
 
-.. important:: Using a base class reference or pointer to an instance of a derived class is correct, but overridden member functions will use the base implementation. For example in :ref:`code_inheritance_use_derived_class` line 5, ``who_am_i`` use its definition from the ``Character`` class. To avoid this behavior, see :ref:`sec_virtual_member_functions`.
-
-.. _sec_virtual_member_functions:
+.. important:: Using a base class reference or pointer to an instance of a derived class is correct, but overridden member functions will use the base implementation. For example in :ref:`code_inheritance_use_derived_class` line 5, ``who_am_i`` uses its definition from the ``Character`` class. To avoid this behavior, see :ref:`object_oriented/polymorphism:virtual member functions`.
 
 Virtual member functions
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -165,6 +163,12 @@ It may be better to actually not be able to construct an instance of a base clas
 
 .. note:: We added the keyword ``override`` in the definition of ``who_am_i`` in the derived class. It indicates to the compiler that the function is meant to override a virtual function from a base class, and compilation will fail if it does not. 
     
-    It helps to detect common errors where the prototype of the function has a typo (missing argument, missing ``const`` keyword, etc.) and thus is not overriding the function from the base class but just adds a new function member using overload (using :ref:`sec_member_functions`).
+    It helps to detect common errors where the prototype of the function has a typo (missing argument, missing ``const`` keyword, etc.) and thus is not overriding the function from the base class but just adds a new function member using overload (using :ref:`object_oriented/classes_objects:member functions`).
 
-.. note:: One usage of base classes with pure virtual member function is to define interfaces.
+.. note:: One usage of base classes with pure virtual member function is to define interfaces. It helps keeping particular implementations of interfaces (such as ``Farmer`` in our example) separate from other parts of the code that only depend on the interface.
+
+.. note:: Another example more in the context of scientific computing:
+
+    - Define an interface (with an abstract class) for an operator with a matrix-vector product (modelled with a pure virtual function).
+    - Different implementations (derived classes from the abstract class) can be defined: dense matrix, sparse matrix, compressed matrix, etc.
+    - Then, iterative linear solvers such as GMRES or CG can be defined only depending on the interface (abstract class) without depending directly on the particular matrix implementations.

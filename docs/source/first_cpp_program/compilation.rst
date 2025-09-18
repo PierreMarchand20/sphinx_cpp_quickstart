@@ -1,16 +1,13 @@
-.. _sec_compilation:
-
 Compilation
 ###########
 
 
-C++ is a :ref:`compiled language <sec_properties>`, thus we need :ref:`compilers <sec_follow_along_compilers>` to translate C++ code to machine language and produce an executable. In this section, we will see how to build a C++ program using directly compilers, and then using more advanced tools such as :ref:`sec_make` and :ref:`sec_cmake`. But first, we need to better organize our files, and learn more about the process of compilation.
+C++ is a :ref:`compiled language <introduction/what:properties of c++>`, thus we need :ref:`compilers <introduction/requirements:compilers>` to translate C++ code to machine language and produce an executable. In this section, we will see how to build a C++ program using directly compilers, and then using more advanced tools such as :ref:`Make <first_cpp_program/compilation:make>` and :ref:`CMake <first_cpp_program/compilation:cmake>`. But first, we need to better organize our files, and learn more about the process of compilation.
 
 
 Files and compilation
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. _sec_source_files:
 
 C++ Source files
 ================
@@ -32,7 +29,7 @@ In the case of our simple program, we can encapsulate the line that prints "Hell
 - You can put the definition of the function into a different file from ``main.cpp``, see :ref:`cpp_multiple_file`.
 - And finally, you can just add an include statement in ``main.cpp`` to :ref:`main_multiple_file` 
 
-In this new example, the ``include`` statements are used copy/paste the :ref:`header file <header_multiple_file>` so that both ``.cpp`` files have the declaration of the function ``print``.
+In this new example, the ``include`` statements are used to copy/paste the :ref:`header file <header_multiple_file>` so that both ``.cpp`` files have the declaration of the function ``print``.
 
 
 .. code-block:: cpp
@@ -72,8 +69,6 @@ In this new example, the ``include`` statements are used copy/paste the :ref:`he
     In :ref:`header_multiple_file`, you can see the lines 1,2 and 7 are special, they are called *header guards*. They are here to ensure that the header file is copied/pasted only once in ``.cpp`` files. One common error that can happen without these, is to have a second header file including the first header, while having a ``.cpp`` file including both. In that case the first header would be copied/pasted twice without the header guards.
 
 
-.. _sec_separation_compilation:
-
 Separate compilation
 ====================
 
@@ -91,7 +86,7 @@ They are mainly two steps in producing an executable from source code files:
 
    Compilation process
 
-Compilation for the example from :ref:`sec_source_files` is illustrated in :ref:`fig`. One advantage of the compilation process is that a modification of the definition of the function ``print`` in ``hello_world.cpp`` will not require a recompilation of ``main.cpp`` for example.
+Compilation for the example from :ref:`first_cpp_program/compilation:c++ source files` is illustrated in :ref:`fig`. One advantage of the compilation process is that a modification of the definition of the function ``print`` in ``hello_world.cpp`` will not require a recompilation of ``main.cpp`` for example.
 
 
 Manual compilation
@@ -154,8 +149,6 @@ Once you have done that, you compile your code as follows
 - And the files are smaller making them easier to read.
 
 
-.. _sec_make:
-
 Make
 ~~~~
 
@@ -201,7 +194,6 @@ To use Make in your terminal, you can call
 
 You can modify ``hello_world.cpp``, and recall ``make`` to check that it will only recompile ``hello_world.cpp``.
 
-.. _sec_cmake:
 
 CMake
 ~~~~~

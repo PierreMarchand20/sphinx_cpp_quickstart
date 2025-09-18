@@ -1,5 +1,3 @@
-.. _sec_cpp_standard_library:
-
 C++ Standard Library
 ####################
 

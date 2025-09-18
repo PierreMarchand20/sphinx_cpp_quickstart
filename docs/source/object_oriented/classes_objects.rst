@@ -1,7 +1,7 @@
 Classes and objects
 ###################
 
-We saw in :ref:`sec_variable_types` that the language itself provides common types like numerical types (``int``, ``float``, etc.), and in :ref:`sec_cpp_standard_library`, we gave a few examples of predefined types such as ``std::vector``. One can also define its own custom types for its particular needs. In C++, a type is defined with the keywords ``class`` or ``struct``, and we call *objects* particular instances of a type.
+We saw in :ref:`first_cpp_program/basic_syntax:variables and types` that the language itself provides common types like numerical types (``int``, ``float``, etc.), and in :ref:`stl/index:c++ standard library`, we gave a few examples of predefined types such as ``std::vector``. One can also define its own custom types for its particular needs. In C++, a type is defined with the keywords ``class`` or ``struct``, and we call *objects* particular instances of a type.
 
 Data members
 ~~~~~~~~~~~~
@@ -26,7 +26,7 @@ Data members are the encapsulated data in the class. In :ref:`code_custom_object
 
 .. note:: The difference between ``class`` and ``struct`` is that by default, what is declared inside is private for the former, and public for the latter.
 
-.. important:: We still use separation compilation as seen in :ref:`sec_separation_compilation`, and we comment out in which file the lines of code are contained.
+.. important:: We still use separation compilation as seen in :ref:`first_cpp_program/compilation:separate compilation`, and we comment out in which file the lines of code are contained.
 
 Constructors
 ~~~~~~~~~~~~
@@ -68,7 +68,6 @@ Another important point is the difference between using the constructor of the d
             m_x=x;m_y=y;
           }
 
-.. _sec_member_functions:
 
 Member functions
 ~~~~~~~~~~~~~~~~
@@ -103,9 +102,7 @@ Once we have constructed our object, we want to interact with it. Thus, we can a
     }
 
 
-.. note:: As for :ref:`sec_functions`, member functions can be overloaded, meaning we can define member functions with the same name but different input parameters.
-
-.. _sec_operator_overloading:
+.. note:: As for :ref:`first_cpp_program/basic_syntax:functions`, member functions can be overloaded, meaning we can define member functions with the same name but different input parameters.
 
 Operator overloading
 ~~~~~~~~~~~~~~~~~~~~
@@ -189,12 +186,12 @@ They can be difficult to implement, that is why they are implicitly defined in s
 **Try to always use data members from the core language or the C++ standard library (or objects that are composed of them).** 
 
 - You can rely on their own constructors/copy constructor/copy assignment/destructor to define the ones of your class, and they will be implicitly defined as long as you do not define one of them manually. This is called the `rule of zero <https://en.cppreference.com/w/cpp/language/rule_of_three>`_ 
-- The only exception being the default constructor that is not implicitly defined as soon as you defined another constructor. To automatically define it using the default constructors of each data members, you can add in the class definition ``Point() = default;``.
+- The only exception being the default constructor that is not implicitly defined as soon as you define another constructor. To automatically define it using the default constructors of each data members, you can add in the class definition ``Point() = default;``.
 
 .. note:: A typical way to **break** this rule is to have a pointer as a data member and to manually manage the memory with ``new`` and ``delete``. It is one reason why it is discouraged.
 
 
-.. important:: Not all types are copyable, for example, ``std::unique_ptr`` from :ref:`sec_smart_pointer` is not. Thus, having a ``std::unique_ptr`` as a data member makes the class non-copyable.
+.. important:: Not all types are copyable, for example, ``std::unique_ptr`` from :ref:`stl/memory:smart pointers` is not. Thus, having a ``std::unique_ptr`` as a data member makes the class non-copyable.
 
 .. note:: Move semantic is out of the scope, but the remarks here extend to `Move constructor <https://en.cppreference.com/w/cpp/language/move_constructor>`__ and `Move assignment <https://en.cppreference.com/w/cpp/language/move_assignment>`__.
 
@@ -202,7 +199,7 @@ They can be difficult to implement, that is why they are implicitly defined in s
 Separate definition and declaration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-So far, we have put the definitions and declarations of the member functions in a :ref:`header <sec_source_files>` file, but as we have seen before, it is generally good practice to separate definition from declaration. We can still do it with function members, the only difference being that since they are defined in the *namespace* of our custom class, we need to put the prefix ``Point::`` when defining them outside the class ,see lines 223-226 in :ref:`code_custom_object_separating_definition_and_declaration`.
+So far, we have put the definitions and declarations of the member functions in a :ref:`header <first_cpp_program/compilation:c++ source files>` file, but as we have seen before, it is generally good practice to separate definition from declaration. We can still do it with function members, the only difference being that since they are defined in the *namespace* of our custom class, we need to put the prefix ``Point::`` when defining them outside the class, see lines 223-226 in :ref:`code_custom_object_separating_definition_and_declaration`.
 
 .. code-block:: cpp
     :caption: Custom objects with only declaration
