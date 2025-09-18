@@ -290,4 +290,4 @@ To help you debug your C++ program, you can use *breakpoints*:
 
 - Click on the left of the line number, it will appear as a red dot.
 
-When running in debug, the C++ program will stop at the breakpoints, you will then see all the current variables, and you will be able to go to the next statement or the next breakpoint. See `Debugging documentation <https://code.visualstudio.com/docs/editor/debugging#_breakpoints>`__ and the `Debugging C++ documentation <https://code.visualstudio.com/docs/cpp/cpp-debug>`__ for more information.
+When running in debug, the C++ program will stop at the breakpoints, you will then see all the current variables, and you will be able to go to the next statement or the next breakpoint. See `Debugging documentation <https://code.visualstudio.com/docs/debugtest/debugging#_breakpoints>`__ and the `Debugging C++ documentation <https://code.visualstudio.com/docs/cpp/cpp-debug>`__ for more information.

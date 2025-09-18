@@ -7,8 +7,10 @@ The purpose of this document is to give a good starting point to learn C++. It w
 
 It is inspired by other tutorials focusing on "Modern C++" (at least C++14...). Here are a few references:
 
-- `Microsoft documentation <https://learn.microsoft.com/en-us/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-170>`_
 - Videos of Kate Gregory like `Stop teaching C <https://youtu.be/YnWhqhNdYyk>`__ 
+- `LearnCpp.com <https://www.learncpp.com>`__
+- `C++ reference <https://cppreference.com>`__ and his examples.
+- `Microsoft documentation <https://learn.microsoft.com/en-us/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-170>`_
 
 
 .. rubric:: How to access this document

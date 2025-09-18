@@ -21,4 +21,6 @@
    first_cpp_program/index
    stl/index
    object_oriented/index
+   generic/index
+   to_go_further
    PDF version <https://pmarchand.pages.math.cnrs.fr/cpp_quickstart/cpp_quickstart.pdf>
