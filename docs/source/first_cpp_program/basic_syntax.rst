@@ -177,7 +177,7 @@ To summarize, when passing by reference:
 - The variables used as arguments in the function call can be modified.
 - There is no copy!
   
-But, what if we want to avoid copying an argument of the function (because it is expensive), but we also want to prohibit modifying it? In this case, we can tell the compiled that the variable is a *constant reference*, meaning that this is an alias, but it cannot modify the content of the variable. A reference for a type ``T`` is ``T&``, a constant reference for a type ``T`` is ``const T&``. :ref:`code_functions_by_constreference` does not compile because we try to modify a ``const int&``.
+But, what if we want to avoid copying an argument of the function (because it is expensive), but we also want to prohibit modifying it? In this case, we can tell the compiler that the variable is a *constant reference*, meaning that this is an alias, but it cannot modify the content of the variable. A reference for a type ``T`` is ``T&``, a constant reference for a type ``T`` is ``const T&``. :ref:`code_functions_by_constreference` does not compile because we try to modify a ``const int&``.
 
 .. code-block:: cpp
     :name: code_functions_by_constreference
@@ -216,7 +216,7 @@ Each identifier (variables, functions, ...) defined in a C++ program has a *scop
 
 .. note:: You can also define global variables, outside any pair of curly brackets, but this is usually considered bad practice.
 
-One of the main feature of C++, one of the concept that makes C++ more that just C with classes is how you can handle resources (for example memory, files). In C, you need to allocate a resource, so you can use it, and then you need to delete the object to free its memory. In C++, resources can be handled automatically by binding their life cycle to the lifetime of an object.
+One of the main feature of C++, one of the concept that makes C++ more than just C with classes is how you can handle resources (for example memory, files). In C, you need to allocate a resource, so you can use it, and then you need to delete the object to free its memory. In C++, resources can be handled automatically by binding their life cycle to the lifetime of an object.
 
 .. important:: This feature is called `RAII <https://en.cppreference.com/w/cpp/language/raii>`__ for *Resource Acquisition Is Initialization*, but one important point is that the resource is released automatically when the associated object is destructed.
 

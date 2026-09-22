@@ -75,7 +75,7 @@ Separate compilation
 They are mainly two steps in producing an executable from source code files:
 
 - The compiler produces object files for each C++ source code. They are usually ``.o`` files and contain machine code for every variables, functions and classes defined in their associated ``.o`` file. They also refer to functions and classes declared, but not defined in the headers.
-- Then, it links the object files to produce an executable. One goal of this steps is for the object files to obtain the correct adresses to all the functions and classes compiled in other object files.
+- Then, it links the object files to produce an executable. One goal of this steps is for the object files to obtain the correct addresses to all the functions and classes compiled in other object files.
 
 .. note:: More exactly, there is another step involving the preprocessor, but I suggest we focus on these two steps. 
 

@@ -8,6 +8,7 @@ Many standard algorithms are already implemented in the STL, and they can be eas
     :caption: Example of STL algorithms
     :name: code_stl_algorithm
 
+    #include <algorithm>
     #include <iostream>
     #include <vector>
 

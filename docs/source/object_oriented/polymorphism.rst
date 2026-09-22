@@ -117,13 +117,13 @@ Runtime polymorphism allows defining more generic functions. In our example, we 
     void who_is(Character& character){character.who_am_i();}
 
 
-.. note:: It is call ``runtime polymorphism`` because, even if there is no information at compile-time, the correct derived implementation is invoked during the execution of the program.
+.. note:: It is called ``runtime polymorphism`` because, even if there is no information at compile-time, the correct derived implementation is invoked during the execution of the program.
 
 
 Pure virtual member functions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It may be better to actually not be able to construct an instance of a base class, which may not mean anything without a proper definition . In our example, it may not mean a lot to have an instance of ``Character``. To prevent this, one can use *pure virtual methods* adding ``=0`` as in line 10 of :ref:`code_inheritance_with_pure_member_function`. Then, the base class ``Character`` cannot be instantiated, the class is said to be *abstract*, and derived classes are required to implement to pure virtual member function to be instantiable.
+It may be better to actually not be able to construct an instance of a base class, which may not mean anything without a proper definition. In our example, it may not mean a lot to have an instance of ``Character``. To prevent this, one can use *pure virtual methods* adding ``=0`` as in line 10 of :ref:`code_inheritance_with_pure_member_function`. Then, the base class ``Character`` cannot be instantiated, the class is said to be *abstract*, and derived classes are required to implement to pure virtual member function to be instantiable.
 
 
 .. code-block:: cpp
