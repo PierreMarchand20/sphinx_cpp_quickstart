@@ -41,6 +41,20 @@ It tells the compiler the size it needs to reserve in memory for every variable,
 
 .. warning:: ``std::string`` is not part of the core language, but it is defined in the :ref:`stl/index:c++ standard library`. You need to add ``#include <string>``.
 
+Type deduction with auto
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Instead of writing a variable's type explicitly, you can let the compiler deduce it from its initial value, by using ``auto`` in place of the type. In :ref:`code_auto`, ``g`` and ``h`` have the same type as their initializations in :ref:`code_type`, respectively ``int`` and ``double``.
+
+.. code-block:: cpp
+    :name: code_auto
+    :caption: Example of type deduction with ``auto``
+
+    auto g{1};   // deduced as int
+    auto h{3.0}; // deduced as double
+
+.. note:: The variable still has a fixed, concrete type once compiled, exactly as if it had been written explicitly: ``auto`` only saves you from writing it yourself. This is particularly convenient when the type is verbose or hard to name, for example the *iterator* types returned by some :ref:`stl/algorithms:algorithms`.
+
 Statements and flow control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

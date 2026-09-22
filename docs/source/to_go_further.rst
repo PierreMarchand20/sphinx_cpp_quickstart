@@ -5,11 +5,10 @@ To go further
 Topics
 ------
 
-- Concepts
-- Move semantic
-- constexpr
-- lambdas
-- enum
+- `Concepts <https://en.cppreference.com/w/cpp/language/constraints>`__
+- `Move semantic <https://en.cppreference.com/w/cpp/utility/move>`__
+- `constexpr <https://en.cppreference.com/w/cpp/language/constexpr>`__
+- `enum <https://en.cppreference.com/w/cpp/language/enum>`__
 
 Other materials
 ---------------
