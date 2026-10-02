@@ -87,7 +87,8 @@ sphinxcontrib_asciinema_defaults = {
 
 # -- Options for LaTeC output -------------------------------------------------
 latex_engine = "lualatex"
-latex_documents = [("index", "cpp_quickstart.tex", project, author, "manual")]
+latex_toplevel_sectioning = "part"
+latex_documents = [("latex_index", "cpp_quickstart.tex", project, author, "manual")]
 latex_elements = {
     "tableofcontents": r"",
     "preamble": r"""

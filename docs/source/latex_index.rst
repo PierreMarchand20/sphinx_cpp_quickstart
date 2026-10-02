@@ -1,16 +1,19 @@
-.. C++ Quick Start documentation master file, created by
-   sphinx-quickstart on Mon Aug 29 16:26:18 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+:orphan:
+
+.. Root document of the PDF version (see latex_documents in conf.py).
+   The HTML version uses index.rst.
 
 .. include:: ../../README.rst
 
-**Contents**
+.. raw:: latex
+
+         \tableofcontents
+         
+Course
+------
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 4
-   :caption: Course
 
    introduction/index
    first_cpp_program/index
@@ -19,17 +22,13 @@
    generic/index
    to_go_further
 
+Projects
+--------
+
 The best way to learn a language is to use it. These projects are meant to be worked on **iteratively**, alongside the reference chapters: each step names the sections you should have read before starting it.
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 0
-   :caption: Projects
 
    projects/hello_world
    projects/ray_tracer/index
-
-.. toctree::
-   :maxdepth: 1
-
-   PDF version <https://pmarchand.pages.math.cnrs.fr/cpp_quickstart/cpp_quickstart.pdf>
