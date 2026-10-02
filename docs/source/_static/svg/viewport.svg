@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="340" viewBox="0 0 840 340" font-family="Helvetica, Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="arrow-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#000"/>
+    </marker>
+    <marker id="arrow-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f5fbf"/>
+    </marker>
+    <marker id="arrow-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c0392b"/>
+    </marker>
+  </defs>
+  <rect width="840" height="340" fill="#fff"/>
+
+  <!-- Panel titles -->
+  <text x="160" y="22" text-anchor="middle" font-weight="bold">Side view</text>
+  <text x="584" y="22" text-anchor="middle" font-weight="bold">Viewport, as seen from the camera</text>
+
+  <g transform="translate(0,20)">
+    <!-- ============ Side view ============ -->
+    <!-- axes -->
+    <line x1="20" y1="70" x2="20" y2="40" stroke="#000" stroke-width="1.2" marker-end="url(#arrow-k)"/>
+    <line x1="20" y1="70" x2="50" y2="70" stroke="#000" stroke-width="1.2" marker-end="url(#arrow-k)"/>
+    <text x="12" y="44" text-anchor="middle">y</text>
+    <text x="52" y="84" text-anchor="middle">−z</text>
+
+    <!-- rays through pixel centers -->
+    <g stroke="#999" stroke-width="1">
+      <line x1="60" y1="156" x2="260" y2="84"/>
+      <line x1="60" y1="156" x2="260" y2="132"/>
+      <line x1="60" y1="156" x2="260" y2="180"/>
+      <line x1="60" y1="156" x2="260" y2="228"/>
+    </g>
+    <!-- optical axis -->
+    <line x1="60" y1="156" x2="260" y2="156" stroke="#000" stroke-dasharray="4 3"/>
+
+    <!-- viewport (edge on) -->
+    <line x1="260" y1="60" x2="260" y2="252" stroke="#000" stroke-width="3"/>
+    <g fill="#000">
+      <circle cx="260" cy="84" r="2.5"/>
+      <circle cx="260" cy="132" r="2.5"/>
+      <circle cx="260" cy="180" r="2.5"/>
+      <circle cx="260" cy="228" r="2.5"/>
+    </g>
+    <text x="252" y="56" text-anchor="end">viewport</text>
+
+    <!-- camera -->
+    <circle cx="60" cy="156" r="5" fill="#000"/>
+    <text x="60" y="140" text-anchor="middle">camera_center</text>
+
+    <!-- viewport_height -->
+    <line x1="268" y1="60" x2="296" y2="60" stroke="#000" stroke-dasharray="2 2"/>
+    <line x1="268" y1="252" x2="296" y2="252" stroke="#000" stroke-dasharray="2 2"/>
+    <line x1="290" y1="62" x2="290" y2="250" stroke="#000" marker-start="url(#arrow-k)" marker-end="url(#arrow-k)"/>
+    <text transform="translate(306,156) rotate(90)" text-anchor="middle" font-family="monospace">viewport_height</text>
+
+    <!-- focal_length -->
+    <line x1="60" y1="164" x2="60" y2="290" stroke="#000" stroke-dasharray="2 2"/>
+    <line x1="260" y1="256" x2="260" y2="290" stroke="#000" stroke-dasharray="2 2"/>
+    <line x1="62" y1="284" x2="258" y2="284" stroke="#000" marker-start="url(#arrow-k)" marker-end="url(#arrow-k)"/>
+    <text x="160" y="302" text-anchor="middle" font-family="monospace">focal_length</text>
+
+    <!-- ============ Front view ============ -->
+    <!-- axes -->
+    <line x1="390" y1="250" x2="390" y2="220" stroke="#000" stroke-width="1.2" marker-end="url(#arrow-k)"/>
+    <line x1="390" y1="250" x2="420" y2="250" stroke="#000" stroke-width="1.2" marker-end="url(#arrow-k)"/>
+    <text x="382" y="224" text-anchor="middle">y</text>
+    <text x="424" y="266" text-anchor="middle">x</text>
+
+    <!-- pixel grid: 6 x 4 pixels of 48 units -->
+    <g stroke="#bbb" stroke-width="1" stroke-dasharray="3 3">
+      <line x1="488" y1="60" x2="488" y2="252"/>
+      <line x1="536" y1="60" x2="536" y2="252"/>
+      <line x1="584" y1="60" x2="584" y2="252"/>
+      <line x1="632" y1="60" x2="632" y2="252"/>
+      <line x1="680" y1="60" x2="680" y2="252"/>
+      <line x1="440" y1="108" x2="728" y2="108"/>
+      <line x1="440" y1="156" x2="728" y2="156"/>
+      <line x1="440" y1="204" x2="728" y2="204"/>
+    </g>
+    <rect x="440" y="60" width="288" height="192" fill="none" stroke="#000" stroke-width="2"/>
+
+    <!-- pixel centers -->
+    <g fill="#000">
+      <circle cx="512" cy="84" r="2.5"/><circle cx="560" cy="84" r="2.5"/><circle cx="608" cy="84" r="2.5"/><circle cx="656" cy="84" r="2.5"/><circle cx="704" cy="84" r="2.5"/>
+      <circle cx="464" cy="132" r="2.5"/><circle cx="512" cy="132" r="2.5"/><circle cx="560" cy="132" r="2.5"/><circle cx="608" cy="132" r="2.5"/><circle cx="656" cy="132" r="2.5"/><circle cx="704" cy="132" r="2.5"/>
+      <circle cx="464" cy="180" r="2.5"/><circle cx="512" cy="180" r="2.5"/><circle cx="560" cy="180" r="2.5"/><circle cx="608" cy="180" r="2.5"/><circle cx="656" cy="180" r="2.5"/><circle cx="704" cy="180" r="2.5"/>
+      <circle cx="464" cy="228" r="2.5"/><circle cx="512" cy="228" r="2.5"/><circle cx="560" cy="228" r="2.5"/><circle cx="608" cy="228" r="2.5"/><circle cx="656" cy="228" r="2.5"/><circle cx="704" cy="228" r="2.5"/>
+    </g>
+
+    <!-- viewport center -->
+    <path d="M 579 151 L 589 161 M 589 151 L 579 161" stroke="#000" stroke-width="1.5"/>
+    <text x="592" y="150" font-size="11" stroke="#fff" stroke-width="3" paint-order="stroke">center</text>
+
+    <!-- upper-left corner -->
+    <circle cx="440" cy="60" r="4" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <text x="434" y="50" text-anchor="end" font-family="monospace">viewport_upper_left</text>
+
+    <!-- pixel00_loc and pixel deltas -->
+    <line x1="464" y1="84" x2="510" y2="84" stroke="#c0392b" stroke-width="2" marker-end="url(#arrow-r)"/>
+    <line x1="464" y1="84" x2="464" y2="130" stroke="#c0392b" stroke-width="2" marker-end="url(#arrow-r)"/>
+    <circle cx="464" cy="84" r="4" fill="#c0392b"/>
+    <text x="458" y="50" font-family="monospace" fill="#c0392b">pixel00_loc</text>
+    <line x1="466" y1="54" x2="464" y2="78" stroke="#c0392b"/>
+    <text x="490" y="77" text-anchor="middle" font-family="monospace" font-size="11" fill="#c0392b" stroke="#fff" stroke-width="3" paint-order="stroke">pixel_delta_u</text>
+    <text x="470" y="118" font-family="monospace" font-size="11" fill="#c0392b" stroke="#fff" stroke-width="3" paint-order="stroke">pixel_delta_v</text>
+
+    <!-- viewport_u / viewport_v -->
+    <line x1="440" y1="272" x2="726" y2="272" stroke="#1f5fbf" stroke-width="2" marker-end="url(#arrow-b)"/>
+    <text x="584" y="290" text-anchor="middle" font-family="monospace" fill="#1f5fbf">viewport_u</text>
+    <text x="584" y="306" text-anchor="middle" font-size="11" fill="#1f5fbf">(length viewport_width)</text>
+    <line x1="748" y1="60" x2="748" y2="250" stroke="#1f5fbf" stroke-width="2" marker-end="url(#arrow-b)"/>
+    <text x="758" y="150" font-family="monospace" fill="#1f5fbf">viewport_v</text>
+    <text x="758" y="166" font-size="11" fill="#1f5fbf">(length</text>
+    <text x="758" y="180" font-size="11" fill="#1f5fbf">viewport_height)</text>
+  </g>
+</svg>

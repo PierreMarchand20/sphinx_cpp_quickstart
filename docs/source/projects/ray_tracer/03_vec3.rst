@@ -1,0 +1,52 @@
+Utility classes for geometry
+#############################
+
+.. important:: Required reading: :ref:`stl/container:arrays`, :ref:`object_oriented/classes_objects:classes and objects`.
+
+In a new header ``include/vec3.hpp``, define a ``vec3`` class wrapping a ``std::array<double, 3>``, used both for 3D points/directions and for colors:
+
+- Member data: ``std::array<double, 3>``.
+- Constructors: a default one (all three components zero) and one taking three ``double``s (its ``x``, ``y`` and ``z`` components).
+- Member functions: accessors for each coordinate (``x()``, ``y()``, ``z()``, each ``const``), unary ``operator-``, ``operator[]`` (both a ``const`` and a non-``const`` overload, returning ``double`` and ``double&`` respectively), ``operator-=``, ``operator+=``, ``operator*=(double)``, ``operator/=(double)``, ``length() const``, ``length_squared() const``.
+- Free functions: ``operator+``, ``operator-``, ``operator*`` (both ``vec3 * vec3`` componentwise, and ``double * vec3`` / ``vec3 * double`` scalar multiplication), ``operator/(vec3, double)``, ``dot``, ``cross``, ``unit_vector``.
+
+You can now create aliases to make your code more readable:
+
+.. code-block:: cpp
+
+    using point3 = vec3;
+    using color = vec3;
+
+- ``point3`` and ``color`` are just names for ``vec3``: a position in space and an RGB color are both "three numbers", but naming them differently makes code easier to read.
+- ``color`` components are between 0 and 1; converting to a byte is ``255.999 * component``.
+
+Add a function to turn a ``color`` into the pixel buffer's bytes:
+
+.. code-block:: cpp
+
+    void write_color(std::vector<std::uint8_t>& pixels, std::size_t pixel_index, const color& pixel_color);
+
+Rewrite the pixel-filling loop from the previous step to build a ``color`` and call ``write_color`` instead of computing the three bytes directly. The displayed image should be identical to the previous step.
+
+.. important:: **Test everything!** Before wiring ``vec3`` into the SFML program, write a small test program ``tests/test_vec3.cpp`` that checks ``operator+``, ``operator-``, ``cross``, ``dot``, ``length`` and ``unit_vector`` against hand-computed values using ``<cassert>``. A sign mistake in ``cross`` or ``unit_vector`` would still compile and still render *something* — only a test with known expected values catches it. Use non-axis-aligned vectors for ``cross``/``dot`` (e.g. ``vec3(1,2,3)`` and ``vec3(4,5,6)``), not just orthogonal unit vectors — a bug in either function can hide behind the many zero terms an axis-aligned test produces.
+
+    Build it with the same CMake project, as a second executable that does not need SFML, and register it as a test with `add_test <https://cmake.org/cmake/help/latest/command/add_test.html>`__. Add at the end of ``CMakeLists.txt``:
+
+    .. code-block:: cmake
+
+        enable_testing()
+
+        add_executable(test_vec3 tests/test_vec3.cpp)
+        target_compile_features(test_vec3 PRIVATE cxx_std_17)
+        target_compile_options(test_vec3 PRIVATE -Wall -Wextra)
+        target_include_directories(test_vec3 PRIVATE include)
+        add_test(NAME vec3 COMMAND test_vec3)
+
+    ``target_include_directories`` lets ``tests/test_vec3.cpp`` simply ``#include "vec3.hpp"``. Then build and run all registered tests from the project root:
+
+    .. code-block:: bash
+
+        cmake --build build
+        ctest --test-dir build
+
+    ``ctest`` reports each test as passed or failed (a failed ``assert`` aborts the program, which counts as a failure); add ``--output-on-failure`` to see the failing assertion. Note that ``assert`` does nothing when ``NDEBUG`` is defined, which is the case in ``Release`` builds: run your tests in the default or ``Debug`` configuration.
