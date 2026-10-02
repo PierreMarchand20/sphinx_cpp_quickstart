@@ -260,6 +260,31 @@ Now that the CMake project is generated, you can call ``make`` in ``cpp_example/
 .. warning:: You may want to remove the flag ``-fsanitize=address`` from compilation and linking if you want better performance from the resulting executable. But in all other cases, it's best to keep it.
 
 
+Fetching external dependencies
+===============================
+
+CMake's `FetchContent <https://cmake.org/cmake/help/latest/module/FetchContent.html>`__ module can download and build an external library automatically as part of your project's configuration step, instead of requiring it to be installed manually beforehand. :ref:`code_fetchcontent` fetches `SFML <https://www.sfml-dev.org>`__, a small graphics library, and makes its ``SFML::Graphics`` target available to link against.
+
+.. code-block:: cmake
+    :name: code_fetchcontent
+    :caption: Fetching an external dependency with ``FetchContent``
+    :linenos:
+
+    include(FetchContent)
+    FetchContent_Declare(
+      SFML
+      GIT_REPOSITORY https://github.com/SFML/SFML.git
+      GIT_TAG 3.0.1
+      GIT_SHALLOW ON
+      EXCLUDE_FROM_ALL SYSTEM)
+    FetchContent_MakeAvailable(SFML)
+
+    add_executable(main src/main.cpp)
+    target_link_libraries(main PRIVATE SFML::Graphics)
+
+.. note:: The first configuration downloads and compiles SFML, which can take a while. Later configurations reuse what was already fetched and built.
+
+
 .. _compilation_vscode:
 
 Integration with IDEs
